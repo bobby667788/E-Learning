@@ -1,0 +1,38 @@
+
+                    <div style="margin-top:20%;"></div>
+
+                    {{#if user}}
+                    <h4>Welcome Back {{user.username}}</h4>
+                    <ul class="alt" style="list-style:none;">
+                        <li><a href = "{{usertype}}s/classes" class="btn btn-warning">Classes</a></li><br>
+                        <li><a href = "/users/logout" class="btn btn-danger">Logout</a></li>
+                    </ul>
+                    {{else}}
+                     <form method="post" action="/users/login">
+				  <div style="margin: 2px auto;width:50%;">        	
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										<input type="text" class="form-control" name="username" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Your Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+								<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+                {{/if}}

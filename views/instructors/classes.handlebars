@@ -1,0 +1,27 @@
+<h2>{{instructor.username}}'s Classes</h2>
+<hr>
+
+
+{{#if instructor}}
+    <table  cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th style="padding-right:100px;padding-bottom:23px;"> Class ID</th>
+                <th style="padding-right:100px;padding-bottom:23px;"> Class Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each instructor.classes}}
+            <tr>
+                <td style="padding-right:100px;">{{class_id}}</td>
+                <td style="padding-right:50px;">{{class_title}}</td>
+                 <td style="padding-right:50px;"><a href="/classes/{{class_id}}/lessons">View Lessons</a></td>
+                <td><a href="/instructors/classes/{{class_id}}/lessons/new">Add Lesson</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <p>You are not teaching any courses</p>
+    {{/if}}
